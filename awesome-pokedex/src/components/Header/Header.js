@@ -1,11 +1,12 @@
 import React from 'react';
+import PropType from 'prop-types';
 import { Nav, Form, FormControl } from 'react-bootstrap';
 import { NavHeader } from './HeaderStyle';
 import { ButtonSearch } from '../Buttons/Button';
 import { colors } from '../../styles/styles';
 
 const Header = ({
-    titleBrand, labelButton, value, onChange
+    titleBrand, labelButton, value, onChange, onClick
 }) => (
   <NavHeader 
     backgroundcolor={colors.secondaryDarken} 
@@ -23,6 +24,7 @@ const Header = ({
               // variant="outline-success"
               backgroundcolor="transparent"
               color="white"
+              onClick={onClick}
               >
               {labelButton}
             </ButtonSearch>
@@ -32,5 +34,13 @@ const Header = ({
     </NavHeader.Collapse>
   </NavHeader>
 );
+
+Header.propTypes = {
+  titleBrand: PropType.string,
+  labelButton: PropType.string,
+  value: PropType.string,
+  onChange: PropType.func,
+  onClick: PropType.func,
+};
 
 export default Header;

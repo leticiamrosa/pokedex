@@ -1,20 +1,31 @@
 import React from 'react';
+import PropType from 'prop-types';
 import { CardPokemon, CardButton } from './CardStyle';
+import If from '../../utils/If/If';
 
 const Card = ({
-    pokemons,
+    pokemon,
+    description,
+    srcImage,
+    loading,
 }) => (
-  <CardPokemon  style={{ width: '18rem' }}>
-    <CardPokemon.Img variant="top" src="holder.js/100px180" />
-    <CardPokemon.Body>
-      <CardPokemon.Title>Card Title</CardPokemon.Title>
-      <CardPokemon.Text>
-        Some quick example text to build on the card title and make up the bulk of
-        the card's content.
-      </CardPokemon.Text>
-      <CardButton variant="primary">Go somewhere</CardButton>
-    </CardPokemon.Body>
-  </CardPokemon>
+  <If show={loading === false}>
+    <CardPokemon  style={{ width: '18rem' }}>
+      <CardPokemon.Img variant="top" src={srcImage} />
+      <CardPokemon.Body>
+        <CardPokemon.Title>{pokemon.name}</CardPokemon.Title>
+        <CardPokemon.Text>{description}</CardPokemon.Text>
+        {/* <CardButton variant="primary">Go somewhere</CardButton> */}
+      </CardPokemon.Body>
+    </CardPokemon>
+  </If>
 );
+
+Card.propTypes = {
+  pokemons: PropType.array,
+  title: PropType.string,
+  description: PropType.string,
+  srcImage: PropType.string,
+};
 
 export default Card;
