@@ -5,7 +5,7 @@ import { ButtonSearch } from '../Buttons/Button';
 import { colors } from '../../styles/styles';
 
 const Header = ({
-    titleBrand, labelButton
+    titleBrand, labelButton, value, onChange
 }) => (
   <NavHeader 
     backgroundcolor={colors.secondaryDarken} 
@@ -18,7 +18,7 @@ const Header = ({
       <Nav >
         <Nav.Item>
           <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+              <FormControl type="text" placeholder="Search" className="mr-sm-2" value={value} onChange={onChange}/>
             <ButtonSearch
               // variant="outline-success"
               backgroundcolor="transparent"

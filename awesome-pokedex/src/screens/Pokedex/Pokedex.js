@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import Header from '../../components/Header/Header';
+import Card from '../../components/Card/Card';
 
 class Pokedex extends Component {
   render() {
     return (
       <div>
         <Header titleBrand="Awesome Pokedex" labelButton="Buscar" />
-        <h1>pokedex</h1>
+        <Card />
       </div>
     )
   }
