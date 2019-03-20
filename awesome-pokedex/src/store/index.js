@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 
 import history from '../routes/history';
 import reducers from './reducers/searchReducers';
+// import reducers from './reducers/reducers';
 
 const middlewares = [routerMiddleware(history), thunk];
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();

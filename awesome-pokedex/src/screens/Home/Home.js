@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ButtonSearch } from '../../components/Buttons/Button';
-
+import { ContainerPokedex } from './HomeStyle';
 import * as actionCreators from '../../store/actions/index';
 
+import Nav from '../../components/Navbar/Navbar';
 import Header from '../../components/Header/Header';
 
 class Home extends Component {
@@ -32,19 +33,12 @@ class Home extends Component {
   
   render() {
     return (
-      <div>
-      <Header 
-        titleBrand="Awesome Pokedex"
-        labelButton="Buscar"
-        value={this.state.newText}
-        onChange={(e) => this.inputChange(e)}
-      />
-      <p>{this.props.pokemon}</p>
-      <Link to="/pokedex">
-        <ButtonSearch  backgroundcolor="green" color="white"> Pokedex</ButtonSearch>
-      </Link>
-      {/* onClick={() => this.props.searchPokemon()} */}
-      </div>
+      <ContainerPokedex className="d-flex justify-content-center align-items-center">
+        <Header />
+        <Link to="/pokedex">
+          <ButtonSearch  backgroundcolor="green" color="white"> Pokedex</ButtonSearch>
+        </Link>
+      </ContainerPokedex>
     )
   }
 }

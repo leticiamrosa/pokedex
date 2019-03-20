@@ -1,38 +1,17 @@
 import React from 'react';
 import PropType from 'prop-types';
-import { Nav, Form, FormControl } from 'react-bootstrap';
-import { NavHeader } from './HeaderStyle';
-import { ButtonSearch } from '../Buttons/Button';
-import { colors } from '../../styles/styles';
+import { Image } from 'react-bootstrap';
+import { LandingPage, HeaderContainer } from './HeaderStyle';
 
 const Header = ({
     titleBrand, labelButton, value, onChange, onClick
 }) => (
-  <NavHeader 
-    backgroundcolor={colors.secondaryDarken} 
-    expand="lg"
-    color={colors.white}
-  >
-    <NavHeader.Brand href="#home">{titleBrand}</NavHeader.Brand>
-    <NavHeader.Toggle aria-controls="basic-NavHeader -nav" />
-    <NavHeader.Collapse id="basic-NavHeader -nav">
-      <Nav >
-        <Nav.Item>
-          <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-sm-2" value={value} onChange={onChange}/>
-            <ButtonSearch
-              // variant="outline-success"
-              backgroundcolor="transparent"
-              color="white"
-              onClick={onClick}
-              >
-              {labelButton}
-            </ButtonSearch>
-          </Form>
-        </Nav.Item>
-      </Nav>
-    </NavHeader.Collapse>
-  </NavHeader>
+  <HeaderContainer className="d-flex justify-content-center align-items-center">
+    <h1>AwesomePokedex</h1>
+    <LandingPage className="d-flex align-items-center flex-column">
+      <Image src={require('../../img/pokedex-icon-19.jpg')} fluid />
+    </LandingPage>
+  </HeaderContainer>
 );
 
 Header.propTypes = {

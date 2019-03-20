@@ -10,7 +10,7 @@ const ButtonEffect = posed(Button)({
 });
 
 export const ButtonSearch = styled(ButtonEffect)`
-  background-color: ${props => props.backgroundcolor};
+  background-color: ${props => props.background || colors.yellow};
   color: ${props => props.color};
   border: 1px solid ${colors.white};
 

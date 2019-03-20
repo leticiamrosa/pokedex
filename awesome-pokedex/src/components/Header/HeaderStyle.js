@@ -1,14 +1,23 @@
 import styled from 'styled-components';
-import { Navbar } from 'react-bootstrap';
-import { fonts } from '../../styles/styles';
+import { Jumbotron } from 'react-bootstrap';
+import { fonts, colors } from '../../styles/styles';
 
-export const NavHeader = styled(Navbar)`
-  background-color: ${props => props.backgroundcolor};
-
-  .navbar-brand {
-    color: ${props => props.color};
+export const HeaderContainer = styled.div`
+  
+  h1 {
+    color: ${colors.yellow};
     font-weight: ${fonts.bold};
   }
+
 `;
 
-export default { NavHeader };
+export const Nav = styled.nav`
+  background-color: ${colors.red};
+`;
+
+
+export const LandingPage = styled(Jumbotron)`
+  background-color: transparent;
+`;
+
+export default { HeaderContainer };
