@@ -6,16 +6,8 @@ const defaultState = {
   loading: true,
 };
 
-const mainReducer = (state = defaultState, action) => {
+const searchReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case 'POKEMON_SHOW_LIST':
-      return {
-        ...state,
-        payload: {
-          allPokemons: action.allPokemons,
-          loading: true,
-        },
-      };
     case 'POKEMON_SEARCH_SUCCESS':
       return {
         ...state,
@@ -43,5 +35,4 @@ const mainReducer = (state = defaultState, action) => {
   }
 };
 
-
-export default mainReducer;
+export default searchReducer;

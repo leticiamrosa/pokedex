@@ -18,7 +18,7 @@ const colors = {
   light: '#f3f3f3',
   white: '#fff',
   grey: '#D9D9D9',
-  black: '#313131',
+  coolGrey: '#212121',
 
   regular: '#333',
 
@@ -26,3 +26,4 @@ const colors = {
 };
 
 export default colors;
+ 

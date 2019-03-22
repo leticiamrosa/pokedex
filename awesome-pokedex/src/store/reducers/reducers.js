@@ -1,12 +1,11 @@
 import { combineReducers } from 'redux';
 
-// import addItems from './addItems';
-// import Search from '../actions/Search';
-import mainReducer from './searchReducers';
+import getPokemonReducer from './getPokemonReducer';
+import searchReducers from './search';
 
-export const reducers = combineReducers({
-  // mainReducer,
-  // Search,
+export const rootReducer = combineReducers({
+  getPokemonReducer,
+  searchReducers,
 });
 
-export default reducers;
+export default rootReducer;
