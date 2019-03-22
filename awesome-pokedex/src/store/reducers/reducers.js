@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router'
 
 import getPokemonReducer from './getPokemonReducer';
-import searchReducers from './search';
+import searchReducers from './searchReducer';
+import history from '../../routes/history';
 
-export const rootReducer = combineReducers({
+export default combineReducers({
   getPokemonReducer,
   searchReducers,
-});
-
-export default rootReducer;
+  router: connectRouter(history),
+})

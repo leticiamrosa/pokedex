@@ -22,11 +22,13 @@ class Pokedex extends Component {
     }    
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.getAllPokemons();
-    console.log(this.props.payload)
+    
   }
+  
   componentDidUpdate() {
+    console.log(this.props.getPokemonReducer.payload)
   }
   
   showAllPokemons() {
