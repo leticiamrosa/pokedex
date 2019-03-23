@@ -10,6 +10,7 @@ const getPokemonReducer = (state = defaultState, action) => {
         payload: {
           loading: false,
           pokemon: action.pokemon,
+          image: action.image,
         },
       };
     case 'GET_POKEMON_ERROR':

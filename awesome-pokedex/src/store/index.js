@@ -4,15 +4,9 @@ import thunk from 'redux-thunk';
 
 import history from '../routes/history';
 import createRootReducer from './reducers/reducers';
-import getPokemonReducer from './reducers/getPokemonReducer';
-import searchReducers from './reducers/searchReducer';
-
-// const rootReducer = combineReducers({
-//   router: getPokemon: getPokemonReducer,
-//   searchPokemon: searchReducers,
-// });
 
 const middlewares = [routerMiddleware(history), thunk];
+// eslint-disable-next-line no-underscore-dangle
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
 const store = createStore(
@@ -23,6 +17,6 @@ const store = createStore(
   ),
 );
 
+console.log(store.getState());
 
-console.log(store.getState())
 export default store;

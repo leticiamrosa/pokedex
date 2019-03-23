@@ -6,7 +6,7 @@ import searchReducers from './searchReducer';
 import history from '../../routes/history';
 
 export default combineReducers({
-  getPokemonReducer,
-  searchReducers,
+  pokemon: getPokemonReducer,
+  search: searchReducers,
   router: connectRouter(history),
 })

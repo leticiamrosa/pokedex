@@ -1,39 +1,42 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import Grid from '@material-ui/core/Grid';
-// import Nav from '../../components/Navbar/Navbar';
-// import Card from '../../components/Card/Card';
-// import Search from '../../components/Search/Search';
-// import CardList from '../../components/CardList/CardList';
-// import { ContainerPokedex } from './PokedexStyle';
 import MaterialCard from '../../components/MaterialCard/MaterialCard';
 import Layout from '../../components/Layout/Layout';
+import If from '../../utils/If/If';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import { Grid } from '@material-ui/core';
 
-import * as actionCreators from '../../store/actions/search';
+import * as actionCreators from '../../store/actions/getPokemon';
 
 class Pokedex extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       search: '',
+      loading: true,
       imagePokemon: null,
       loading: true,
       allPokemons: [],
-    }    
+    }
   }
 
   componentDidMount() {
     this.props.getAllPokemons();
-    
+    setTimeout(() => {
+      this.setAllPokemons();
+      this.setState({ loading: false })
+    }, 500);
   }
-  
+
   componentDidUpdate() {
-    console.log(this.props.getPokemonReducer.payload)
+    console.log(this.state.allPokemons)
   }
   
-  showAllPokemons() {
-    console.log(this.props.payload.pokemon)
-    
+  setAllPokemons() {
+    const { allPokemons } = this.state;
+    const { pokemon } = this.props;
+    allPokemons.push(pokemon.payload);
   }
   
   handleSearchInput(e) {
@@ -41,12 +44,23 @@ class Pokedex extends Component {
   }
   
   render() {
-    const { payload } = this.props;
-    console.log(this.props.payload)
+    const { loading, allPokemons } = this.state;
+    const { pokemon } = this.props;
+
     return (
-      <Layout 
-        
-      />
+      <div>
+        <If show={loading}>
+        <Grid style={{ flexGrow: 1 }}container justify="center" alignItems="center">
+          <CircularProgress aria-describedby color="secondary"/>
+        </Grid>
+        </If>
+        <If show={!loading}>
+          <Layout 
+            title="AwesomePokedex"
+            pokemons={allPokemons}
+          />
+        </If>
+      </div>
     )
   }
 }

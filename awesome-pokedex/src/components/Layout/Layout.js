@@ -7,34 +7,32 @@ import {
   Footer,
   Typographys,
 } from './LayoutStyle';
-import { colors, fonts } from '../../styles/styles'
+import MaterialCard from '../../components/MaterialCard/MaterialCard';
+import { colors } from '../../styles/styles'
 
 const Layout = ({
-    params,
+    title,
+    pokemons,
 }) => (
-<div style={{ flexGrow: 1 }}>
-      {/* <AppBar position="static" color="secondary">
-        <Toolbar>
-          <Typography variant="h6" color={colors.light}>
-            AwesomePokedex
-          </Typography>
-        </Toolbar>
-      </AppBar> */}
-
+    <div style={{ flexGrow: 1, backgroundColor: colors.coolGrey }}>
       <Navbar position="static">
-        <Nav background={colors.coolGrey} >
-          <Typographys variant="h5" > AwesomePokedex</Typographys>
+        <Nav background="coral" >
+          <Typographys variant="h5">{title}</Typographys>
         </Nav>
       </Navbar>
-      <Grid container>
-
-      </Grid>
+      <MaterialCard 
+        pokemons={pokemons}
+      />
       <Footer container>
         <Grid item xs={12}>
-          <Typographys variant="caption">Made with ❤️</Typographys>
+          <Typographys style={{ color: 'white'}}variant="body1" >Made with <span role="img" aria-label="Emoticon de coração">️❤️</span></Typographys>
         </Grid>
       </Footer>
     </div>
 );
+
+Layout.propTypes = {
+  title: PropTypes.string,
+}
 
 export default Layout;
