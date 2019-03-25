@@ -9,11 +9,11 @@ import {
   CardBody,
   CardFooter,
   PokemonType,
-} from './MaterialCardStyle';
+} from './CardPokemonStyles';
 import Grid from '@material-ui/core/Grid';
 import { colors } from '../../styles/styles';
 
-const MaterialCard = ({
+const CardPokemon = ({
     pokemons,
 }) => (
   <Grid align="center" container style={styles.root}>
@@ -63,8 +63,8 @@ const MaterialCard = ({
   </Grid>
 );
 
-MaterialCard.propTypes = {
+CardPokemon.propTypes = {
   pokemons: PropTypes.array,
 }
 
-export default MaterialCard;
+export default CardPokemon;

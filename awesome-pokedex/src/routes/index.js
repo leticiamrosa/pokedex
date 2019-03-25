@@ -3,8 +3,7 @@ import posed, { PoseGroup } from 'react-pose';
 import { Switch, Route } from "react-router-dom";
 import { ConnectedRouter } from 'connected-react-router';
 
-// import Home from '../screens/Home/Home';
-// import Pokedex from '../screens/Pokedex/Pokedex';
+import Home from '../screens/Home/Home';
 import Pokedex from '../screens/Pokedex/Pokedex';
 
 import history from './history';
@@ -21,8 +20,8 @@ const Router = () => (
       <PoseGroup>
         <RouteContainer key={location.pathname}>
           <Switch location={location}>
-            <Route exact path="/" component={Pokedex} key="pokedex " />
-            {/* <Route path="/pokedex" component={Pokedex} key="pokedex" /> */}
+            <Route exact path="/" render={(props) => <Home {...props} params="leticia" />} key="home" />
+            <Route path="/pokedex" component={Pokedex} key="pokedex" />
           </Switch>
         </RouteContainer>
       </PoseGroup>

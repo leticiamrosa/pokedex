@@ -1,44 +1,54 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { ButtonSearch } from '../../components/Buttons/Button';
-import { ContainerPokedex } from './HomeStyle';
-import * as actionCreators from '../../store/actions/index';
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
+import GenerationCard from '../../components/GenerationCard/GenerationCard';
+import SpinnerIf from '../../components/SpinnerIf/SpinnerIf';
+import If from '../../utils/If/If';
+import { Container } from '../../components/Utils/styleUtils';
 
-import Nav from '../../components/Navbar/Navbar';
-import Header from '../../components/Header/Header';
+import * as actionCreators from '../../store/actions/getGeneration';
 
 class Home extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      newText: 'pikachu',
+      loading: true,
+      generations: [],
     }
-    console.log(props)
   }
 
-  addNewText() {
-    // const { addItems,  searchPokemon } = this.props;
-    // const { newText } = this.state;
-    // addItems(newText);
-    // console.log(searchPokemon(newText))
-    // console.log( addItems(newText))
-    // // this.setState({ newText: ''});
+  componentDidMount() {
+    this.props.showAllGeneration()
+    setTimeout(() => {
+      this.showAllGeneration()
+      this.setState({ loading: false })
+    }, 500);
   }
 
-  inputChange(e) {
-    // const { newText } = this.state;
-    this.setState({ newText: e.target.value })
+  showAllGeneration() {
+    const { generations } = this.state;
+    const { generation } = this.props;
+    generations.push(generation.payload.generation);
   }
   
   render() {
+    const { loading, generations } = this.state;
+
     return (
-      <ContainerPokedex className="d-flex justify-content-center align-items-center">
-        <Header />
-        <Link to="/pokedex">
-          <ButtonSearch  backgroundcolor="green" color="white"> Pokedex</ButtonSearch>
-        </Link>
-      </ContainerPokedex>
+      <div>
+        <Navbar title="AwesomePokedex" background="coral" />
+        <Container container justify="center" alignItems="center">
+        <SpinnerIf show={loading} />
+          <If show={!loading}>
+            <GenerationCard 
+              generations={generations}
+            />
+          </If>
+        <Footer />
+        </Container>
+      </div>
     )
   }
 }
@@ -48,4 +58,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, actionCreators)(Home);
-
