@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/awesome-pokedex/awesome-pokedex/precache-manifest.7a57cfc7509380cfef8a32d088895585.js"
+  "/awesome-pokedex/precache-manifest.74b9a4e79890e43d856eef224421d9c7.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/awesome-pokedex/awesome-pokedex/index.html", {
+workbox.routing.registerNavigationRoute("/awesome-pokedex/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });

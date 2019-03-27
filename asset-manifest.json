@@ -1,11 +1,11 @@
 {
-  "main.js": "/awesome-pokedex/awesome-pokedex/static/js/main.d5a6ae5e.chunk.js",
-  "main.js.map": "/awesome-pokedex/awesome-pokedex/static/js/main.d5a6ae5e.chunk.js.map",
-  "runtime~main.js": "/awesome-pokedex/awesome-pokedex/static/js/runtime~main.c83b5fad.js",
-  "runtime~main.js.map": "/awesome-pokedex/awesome-pokedex/static/js/runtime~main.c83b5fad.js.map",
-  "static/js/2.6bac486b.chunk.js": "/awesome-pokedex/awesome-pokedex/static/js/2.6bac486b.chunk.js",
-  "static/js/2.6bac486b.chunk.js.map": "/awesome-pokedex/awesome-pokedex/static/js/2.6bac486b.chunk.js.map",
-  "index.html": "/awesome-pokedex/awesome-pokedex/index.html",
-  "precache-manifest.7a57cfc7509380cfef8a32d088895585.js": "/awesome-pokedex/awesome-pokedex/precache-manifest.7a57cfc7509380cfef8a32d088895585.js",
-  "service-worker.js": "/awesome-pokedex/awesome-pokedex/service-worker.js"
+  "main.js": "/awesome-pokedex/static/js/main.d5a6ae5e.chunk.js",
+  "main.js.map": "/awesome-pokedex/static/js/main.d5a6ae5e.chunk.js.map",
+  "runtime~main.js": "/awesome-pokedex/static/js/runtime~main.f2e153e6.js",
+  "runtime~main.js.map": "/awesome-pokedex/static/js/runtime~main.f2e153e6.js.map",
+  "static/js/2.613c011b.chunk.js": "/awesome-pokedex/static/js/2.613c011b.chunk.js",
+  "static/js/2.613c011b.chunk.js.map": "/awesome-pokedex/static/js/2.613c011b.chunk.js.map",
+  "index.html": "/awesome-pokedex/index.html",
+  "precache-manifest.74b9a4e79890e43d856eef224421d9c7.js": "/awesome-pokedex/precache-manifest.74b9a4e79890e43d856eef224421d9c7.js",
+  "service-worker.js": "/awesome-pokedex/service-worker.js"
 }
