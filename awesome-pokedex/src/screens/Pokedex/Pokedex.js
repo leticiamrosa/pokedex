@@ -10,25 +10,33 @@ import * as actionCreators from '../../store/actions/getPokemon';
 class Pokedex extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       loading: true,
       imagePokemon: null,
       allPokemons: [],
       activePage: 1,
+      generation: this.props.location.state.limit,
+      offSet: 0,
+      limit: 0,
     }
   }
 
+  componentWillMount() {
+    const { generation } = this.state;
+    this.whichGenerationShows(generation);
+  }
+
   componentDidMount() {
-    this.props.getAllPokemons();
+    const { limit, offSet } = this.state;
+    this.props.getAllPokemons(offSet, limit);
     setTimeout(() => {
       this.setAllPokemons();
       this.setState({ loading: false })
-    }, 500);
+    }, 1000);
   }
 
   componentDidUpdate() {
-    console.log(this.props.match.params.limit)
+    // console.log(this.state.limit)
   }
   
   setAllPokemons() {
@@ -41,14 +49,34 @@ class Pokedex extends Component {
     this.setState({ search: e.target.value });
   }
 
-  handlePageChange(limit) {
-    this.props.pokemonPagination(10)
+  whichGenerationShows(generation) {
+    switch (generation) {
+      case 'Geração I':
+      this.setState({ offSet: 0, limit: 151 });
+      break;
+      case 'Geração II':
+      this.setState({ offSet: 151, limit: 251 });
+      break;
+      case 'Geração III':
+      this.setState({ offSet: 251, limit: 351 });
+      break;
+      case 'Geração IV':
+      this.setState({ offSet: 351, limit: 451 });
+      break;
+      case 'Geração V':
+      this.setState({ offSet: 451, limit: 551 });
+      break;
+      case 'Geração VI':
+      this.setState({ offSet: 551, limit: 651 });
+      break;
+      default:
+      this.setState({ offSet: 252, limit: 351 });
+    }
   }
   
   render() {
     const { loading, allPokemons } = this.state;
     const { activePage } = this.state;
-    
     return (
       <Container>
         <SpinnerIf show={loading} />
@@ -56,11 +84,6 @@ class Pokedex extends Component {
           <Layout 
             title="AwesomePokedex"
             pokemons={allPokemons}
-            activePage={activePage}
-            itemsCountPerPage={10}
-            totalItemsCount={450}
-            pageRangeDisplayed={5}
-            onChange={() => this.handlePageChange()}
           />
         </If>
       </Container>

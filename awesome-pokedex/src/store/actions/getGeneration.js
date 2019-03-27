@@ -4,7 +4,7 @@ const generations = [
   'Geração III',
   'Geração IV',
   'Geração V',
-  'Geração VII',
+  'Geração VI',
 ];
 
 export function getGeneration(generation) {

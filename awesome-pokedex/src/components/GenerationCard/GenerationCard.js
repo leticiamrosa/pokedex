@@ -9,7 +9,7 @@ import { Grid, Button } from '@material-ui/core';
 import { Container } from '../Utils/styleUtils';
 import { Link } from 'react-router-dom'
 
-const MyLink = props => <Link to="/pokedex"  {...props} />
+const MyLink = props => <Link to={{ pathname: '/pokedex', state: { limit: 'hellow world' } }}  {...props}/>
 
 const GenerationCard = ({
     generations,
@@ -20,7 +20,13 @@ const GenerationCard = ({
       generations.map((item) => (
         item.map((generation) => (
           <Grid item xs={12} sm={4} align="center" key={generation}>
-            <Button component={MyLink}>
+            <Button 
+              component={Link}
+              to={{ 
+                pathname: '/pokedex',
+                state: { limit: `${generation}` }, 
+                }}
+            >
               <Card style={styles.cardPokemon} elevation={4} >
                 <Typographys align="center" variant="title">{generation}</Typographys>
               </Card>

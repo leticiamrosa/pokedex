@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiServe = 'https://pokeapi.co/api/v2/pokemon/?limit=';
+const apiServe = 'https://pokeapi.co/api/v2/pokemon/';
 const apiImage = 'http://pokestadium.com/sprites/xy/';
 const pokemons = [];
 const pokemonConfig = [];
@@ -51,9 +51,9 @@ export function responsePokemonData(response, dispatch) {
   });
 }
 
-export function getAllPokemons(limitNumber) {
+export function getAllPokemons(offSet, limitNumber) {
   return (dispatch) => {
-    axios.get(apiServe + limitNumber)
+    axios.get(`${apiServe}?offset=${offSet}&limit=${limitNumber}`)
       .then((response) => {
         responsePokemonData(response, dispatch);
       }).catch((error) => {
