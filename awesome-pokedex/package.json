@@ -33,7 +33,7 @@
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint src/*.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -b master -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
