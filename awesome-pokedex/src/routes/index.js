@@ -21,7 +21,7 @@ const Router = () => (
         <RouteContainer key={location.pathname}>
           <Switch location={location}>
             <Route exact path="/" render={(props) => <Home {...props} params="leticia" />} key="home" />
-            <Route path="/pokedex" component={Pokedex} key="pokedex" />
+            <Route path="/pokedex" render={(props) => <Pokedex {...props} />} key="pokedex" />
           </Switch>
         </RouteContainer>
       </PoseGroup>

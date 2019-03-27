@@ -1,8 +1,11 @@
-import axios from 'axios';
-
-const url = 'https://pokeapi.co/api/v2/pokedex/';
-const id = [1, 2, 3, 4, 5, 6, 7, 8];
-const generations = [];
+const generations = [
+  'Geração I',
+  'Geração II',
+  'Geração III',
+  'Geração IV',
+  'Geração V',
+  'Geração VII',
+];
 
 export function getGeneration(generation) {
   return {
@@ -20,15 +23,6 @@ export function getGenerationError(error) {
 
 export function showAllGeneration() {
   return (dispatch) => {
-    id.map(generation => (
-      axios.get(`${url}${generation}`)
-        .then((response) => {
-          const data = response.data.name;
-          generations.push(data);
-          dispatch(getGeneration(generations));
-        }).catch((error) => {
-          dispatch(getGenerationError(error));
-        })
-    ));
+    dispatch(getGeneration(generations));
   };
 }

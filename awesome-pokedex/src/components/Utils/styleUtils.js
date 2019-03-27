@@ -9,4 +9,6 @@ export const Container = styled(Grid)`
   color: ${props => props.color || colors.coolGrey};
 `;
 
+export const Image = styled.img``;
+
 export default { Container };

@@ -1,16 +1,16 @@
+
+
 const defaultState = {
   loading: true,
 };
 
-const getPokemonReducer = (state = defaultState, action) => {
+const showPaginationPokemonReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case 'GET_POKEMON':
+    case 'SHOW_PAGINATION':
       return {
         ...state,
         payload: {
-          loading: false,
-          pokemon: action.pokemon,
-          image: action.image,
+          limit: action.limit + 150,
         },
       };
     case 'GET_POKEMON_ERROR':
@@ -28,4 +28,4 @@ const getPokemonReducer = (state = defaultState, action) => {
   }
 };
 
-export default getPokemonReducer;
+export default showPaginationPokemonReducer;

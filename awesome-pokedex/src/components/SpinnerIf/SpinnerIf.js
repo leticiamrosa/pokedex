@@ -4,14 +4,14 @@ import { colors } from '../../styles/styles';
 
 const SpinnerIf = (props) => {
   const {
-    show, color, description, textStyle,
+    show, color,
   } = props;
 
   if (show) {
     return (
       <ContainerSpinner container justify="center" alignItems="center" spacing={16}>
         <ContentSpinner item>
-          <Spinner aria-describedby color={color || colors.primary}/>
+          <Spinner spinnercolor={color || colors.primary}/>
         </ContentSpinner>
       </ContainerSpinner>
     );

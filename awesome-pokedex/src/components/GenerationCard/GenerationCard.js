@@ -5,20 +5,26 @@ import {
   styles,
   Card,
 } from './GenerationCardStyle';
-import Grid from '@material-ui/core/Grid';
+import { Grid, Button } from '@material-ui/core';
 import { Container } from '../Utils/styleUtils';
+import { Link } from 'react-router-dom'
+
+const MyLink = props => <Link to="/pokedex"  {...props} />
 
 const GenerationCard = ({
     generations,
+    nextPage,
 }) => (
   <Container container justify="center" alignItems="center">
     {
       generations.map((item) => (
         item.map((generation) => (
-          <Grid item xs={12} sm={3  } align="center" key={generation}>
-            <Card style={styles.cardPokemon} elevation="4">
+          <Grid item xs={12} sm={4} align="center" key={generation}>
+            <Button component={MyLink}>
+              <Card style={styles.cardPokemon} elevation={4} >
                 <Typographys align="center" variant="title">{generation}</Typographys>
-            </Card>
+              </Card>
+            </Button>
           </Grid>
         ))
       ))

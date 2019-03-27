@@ -21,15 +21,27 @@ export const Typographys = styled(Typography)`
   ::first-letter {
     text-transform: uppercase !important;
   }
+  
+  :hover {
+      color: ${colors.light} !important;
+  }
 `;
 
 export const Card = styled(Paper)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: ${colors.light} !important;
 
   p {
     font-weight: ${fonts.bold};
     color: ${colors.coolGrey} !important;
     padding-right: 1em;
+  } 
+
+  :hover {
+    transform: scale(1.2);
+    background-color: ${colors.primary} !important;
   }
 `;
 

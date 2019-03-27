@@ -10,7 +10,7 @@ export const ContainerSpinner = styled(Grid)`
 export const ContentSpinner = styled(Grid)``;
 
 export const Spinner = styled(CircularProgress)`
-  color: ${props => props.spinnerColor || colors.primary} !important;
+  color: ${props => props.spinnercolor || colors.primary} !important;
 `;
 
 export default { ContainerSpinner };

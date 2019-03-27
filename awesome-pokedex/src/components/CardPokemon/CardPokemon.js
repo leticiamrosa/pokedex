@@ -21,7 +21,7 @@ const CardPokemon = ({
       pokemons.map((item) => (
         item.pokemon.map((pokemon) => (
           <Grid item xs={12} sm={2} key={pokemon.id}>
-            <Card style={styles.cardPokemon} elevation={2}>
+            <Card style={styles.cardPokemon} elevation={2} >
               <Typographys align="right" variant="body1">#{pokemon.id}</Typographys>
               <ImageContent>
                 <Image src={`${item.image}${pokemon.name}.gif`} />
@@ -29,8 +29,8 @@ const CardPokemon = ({
                 <Typographys variant="title">{pokemon.name}</Typographys>
               <CardBody>
                 {
-                  pokemon.types.map(type => (
-                    <PokemonType label={type.type.name} 
+                  pokemon.types.map((type, index) => (
+                    <PokemonType key={index} label={type.type.name} 
                       background={
                         type.type.name === 'poison' ? colors.poison : null
                         || type.type.name === 'grass' ? colors.grass : null
