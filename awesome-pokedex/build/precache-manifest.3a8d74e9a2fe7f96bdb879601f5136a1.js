@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/pokedex/static/js/runtime~main.fa119ff4.js"
   },
   {
-    "revision": "811f793529e3e969c419",
-    "url": "/pokedex/static/js/main.0425fb94.chunk.js"
+    "revision": "f66f72f320902db0236f",
+    "url": "/pokedex/static/js/main.fec6e065.chunk.js"
   },
   {
     "revision": "dde4071670582f336f5f",
     "url": "/pokedex/static/js/2.6e1b1e26.chunk.js"
   },
   {
-    "revision": "8c57e544bb258d886a2e14f7c532dced",
+    "revision": "641c15e1c7d4a6e52430d2480fe1885d",
     "url": "/pokedex/index.html"
   }
 ];
