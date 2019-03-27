@@ -1,11 +1,11 @@
 {
-  "main.js": "/awesome-pokedex/static/js/main.d5a6ae5e.chunk.js",
-  "main.js.map": "/awesome-pokedex/static/js/main.d5a6ae5e.chunk.js.map",
+  "main.js": "/awesome-pokedex/static/js/main.126e393c.chunk.js",
+  "main.js.map": "/awesome-pokedex/static/js/main.126e393c.chunk.js.map",
   "runtime~main.js": "/awesome-pokedex/static/js/runtime~main.f2e153e6.js",
   "runtime~main.js.map": "/awesome-pokedex/static/js/runtime~main.f2e153e6.js.map",
   "static/js/2.613c011b.chunk.js": "/awesome-pokedex/static/js/2.613c011b.chunk.js",
   "static/js/2.613c011b.chunk.js.map": "/awesome-pokedex/static/js/2.613c011b.chunk.js.map",
   "index.html": "/awesome-pokedex/index.html",
-  "precache-manifest.74b9a4e79890e43d856eef224421d9c7.js": "/awesome-pokedex/precache-manifest.74b9a4e79890e43d856eef224421d9c7.js",
+  "precache-manifest.58a38ce7e017b09cf897553d96f3c09d.js": "/awesome-pokedex/precache-manifest.58a38ce7e017b09cf897553d96f3c09d.js",
   "service-worker.js": "/awesome-pokedex/service-worker.js"
 }
