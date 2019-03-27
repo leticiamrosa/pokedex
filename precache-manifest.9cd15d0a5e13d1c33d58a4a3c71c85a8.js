@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/awesome-pokedex/static/js/runtime~main.f2e153e6.js"
   },
   {
-    "revision": "8223f821eced6915d494",
-    "url": "/awesome-pokedex/static/js/main.126e393c.chunk.js"
+    "revision": "eb803180cd8989e7af43",
+    "url": "/awesome-pokedex/static/js/main.b79acdae.chunk.js"
   },
   {
     "revision": "cb692a5b5a4d2f86305d",
     "url": "/awesome-pokedex/static/js/2.613c011b.chunk.js"
   },
   {
-    "revision": "150342ce24db1f183e0752cf0f0abb98",
+    "revision": "01903d9d218ec7876a0df3e4c7ddb728",
     "url": "/awesome-pokedex/index.html"
   }
 ];
