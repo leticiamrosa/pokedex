@@ -23,7 +23,7 @@ const GenerationCard = ({
             <Button 
               component={Link}
               to={{ 
-                pathname: '/pokedex',
+                pathname: '/pokemons',
                 state: { limit: `${generation}` }, 
                 }}
             >
