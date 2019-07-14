@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { NavContent } from './NavbarStyle';
 
 const Nav = ({
     title,
 }) => (
   <NavContent>
-    <NavContent.Brand href="#home">{title}</NavContent.Brand>
+  <Link to="/">
+    <NavContent.Brand>{title}</NavContent.Brand>
+  </Link>
   </NavContent>
 );
 
