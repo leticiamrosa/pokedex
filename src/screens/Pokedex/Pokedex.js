@@ -27,9 +27,9 @@ class Pokedex extends Component {
     this.whichGenerationShows(generation);
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { limit, offSet } = this.state;
-    this.props.getAllPokemons(offSet, limit);
+    await this.props.getAllPokemons(offSet, limit);
     setTimeout(() => {
       this.setAllPokemons();
       this.setState({ loading: false })

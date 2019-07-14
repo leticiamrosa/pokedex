@@ -17,7 +17,7 @@ const CardPokemon = ({
     pokemons,
 }) => (
   <Grid align="center" container style={styles.root}>
-    {
+    {pokemons &&
       pokemons.map((item) => (
         item.pokemon.map((pokemon) => (
           <Grid item xs={12} sm={2} key={pokemon.id}>
