@@ -6,7 +6,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@material-ui/styles": "^3.0.0-alpha.10",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.3.1",
     "connected-react-router": "^4.4.1",
     "eslint-config-airbnb": "^17.1.0",
